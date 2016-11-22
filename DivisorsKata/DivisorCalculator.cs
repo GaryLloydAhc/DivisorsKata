@@ -8,7 +8,18 @@ namespace DivisorsKata
     {
         public int[] Calculate(int inputNumber)
         {
-            return inputNumber == 2 ? new int[] { 1, 2 } : new int[] {1};
+            if (inputNumber == 4)
+            {
+                return new int[] {1,2,4};
+            }
+            else if (inputNumber == 2)
+            {
+                return new int[] { 1, 2};
+            }
+            else
+            {
+                return new int[] {1};
+            }
         }
     }
 }
