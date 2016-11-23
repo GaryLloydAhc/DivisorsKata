@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace DivisorsKata
@@ -8,18 +7,15 @@ namespace DivisorsKata
     {
         public int[] Calculate(int inputNumber)
         {
-            if (inputNumber == 4)
-            {
-                return new int[] {1,2,4};
-            }
-            else if (inputNumber == 2)
-            {
-                return new int[] { 1, 2};
-            }
-            else
-            {
-                return new int[] {1};
-            }
+            var divisors = new List<int> {1};
+
+            if (inputNumber % 2 == 0)          
+                divisors.AddRange(new List<int> {2, inputNumber / 2});
+
+            divisors.Add(inputNumber);
+
+            divisors.Sort();
+            return divisors.Distinct().ToArray();
         }
     }
 }
