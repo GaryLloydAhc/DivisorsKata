@@ -7,15 +7,9 @@ namespace DivisorsKata
     {
         public int[] Calculate(int inputNumber)
         {
-            List<int> list = new List<int>();
-            var divisors = Enumerable.Range(1, inputNumber).Where((x) => inputNumber%x == 0);
-
-            foreach (var div in divisors)
-            {
-                list.Add(div);
-            }
-
-            return list.ToArray();
+            return Enumerable.Range(1, inputNumber)
+                .Where(x => inputNumber%x == 0)
+                .ToArray();
         }
     }
 }
